@@ -1,4 +1,4 @@
-from DataStructures import Queue
+from DataStructures import Stack,Queue,Deque
 import random
 
 
@@ -483,3 +483,20 @@ def PrinterSimulation(numSeconds,PagesPerMinute):
 
 #----------------------printer simumlation end-----------------------
 
+#----------------------Palindrome checker program--------------------
+
+def palindrom_checker(string:str)->bool:
+    """checks if a string is a palindrom, returns bool"""
+    adeque = Deque()
+    
+    for char in string:
+        adeque.addRear()
+    
+    stillEqual=True
+    while adeque.size()>1 and stillEqual:
+        first = adeque.removeFront()
+        last = adeque.removeRear()
+        
+        if first != last:
+            stillEqual = False
+    return stillEqual

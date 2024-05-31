@@ -71,6 +71,7 @@ class Deque:
     and end. items can be heterogenous like the other linear data structures."""
     
     def __init__(self):
+        """initialize an empty Deque upon instiantion"""
         self.items = []
 
     def isEmpty(self)->bool:
@@ -83,7 +84,7 @@ class Deque:
     
     def addRear(self,item)-> None:
         """adds an item to the rear, returns none"""
-        self.items.append(0,item)
+        self.items.insert(0,item)
     
     def removeFront(self)->Any:
         """removes an item from the front, returns the item"""
