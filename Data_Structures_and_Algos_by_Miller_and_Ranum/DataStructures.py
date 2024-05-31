@@ -1,4 +1,4 @@
-
+from typing import Any
 
 
 #----------------------Linear Data Structures:----------------------------------------------
@@ -21,7 +21,7 @@ class Stack:
         """Adds a item to the end of the Stack, returns none"""
         self.item.append(item)
     
-    def peek(self):
+    def peek(self)->Any:
         """Returns the item at the end of the Stack"""
         return self.item[-1]
     
@@ -29,7 +29,7 @@ class Stack:
         """Returns the count of of elements in the Stack"""
         return len(self.item)
     
-    def pop(self):
+    def pop(self)->Any:
         """Returns the last element in the Stack"""
         return self.item.pop()
     
@@ -49,7 +49,7 @@ class Queue:
         """Adds an item to the start of the queue. method returns nothing"""
         self.queue.insert(0,item)
         
-    def dequeue(self):
+    def dequeue(self)->Any:
         """Pops off the item in at the back of the queue. Returns the item popped off"""
         return self.queue.pop()
     
@@ -73,20 +73,26 @@ class Deque:
     def __init__(self):
         self.items = []
 
-    def isEmpty(self):
+    def isEmpty(self)->bool:
+        """checks if Deque is empty, returns bool"""
         return self.items == []
     
-    def addFront(self,item):
+    def addFront(self,item)->None:
+        """adds an item to the front,returns none"""
         self.items.append(item)
     
-    def addRear(self,item):
+    def addRear(self,item)-> None:
+        """adds an item to the rear, returns none"""
         self.items.append(0,item)
     
-    def removeFront(self):
+    def removeFront(self)->Any:
+        """removes an item from the front, returns the item"""
         return self.items.pop()
     
-    def removeRear(self):
+    def removeRear(self)->Any:
+        """removes an item from the rear, returns the item """
         return self.items.pop(0)
 
-    def size(self):
+    def size(self)->int:
+        """Checks the numer of items in the deque, returns int"""
         return len(self.items)
