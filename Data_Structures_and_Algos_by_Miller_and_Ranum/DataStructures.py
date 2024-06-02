@@ -125,3 +125,16 @@ class Node:
         """function that overwrites what is the next node that this node points to in the
         relative position of the linked list."""
         self.next = newnext
+        
+
+class UnorderedList:
+    """class to represent an unordered list.
+    only data it has is telling the first node in the linked list"""
+    
+    def __init__(self):
+        """a reference to the first node in the linked list"""
+        self.head = None
+    
+    def isEmpty(self):
+        """Simple boolean checking if the node reference attribute is none or not"""
+        return self.head == None
