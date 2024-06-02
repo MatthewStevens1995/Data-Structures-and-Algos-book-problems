@@ -138,3 +138,8 @@ class UnorderedList:
     def isEmpty(self):
         """Simple boolean checking if the node reference attribute is none or not"""
         return self.head == None
+    
+    def add(self,item):
+        temp = Node(item)
+        temp.setNext(self.head)
+        self.head = temp
