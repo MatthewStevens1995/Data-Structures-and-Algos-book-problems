@@ -97,3 +97,31 @@ class Deque:
     def size(self)->int:
         """Checks the numer of items in the deque, returns int"""
         return len(self.items)
+    
+
+class Node:
+    
+    """this is a Node class used to implement a Linked list"""
+    
+    def __init__(self, initdata):
+        """initializes a node, holding a reference to what value/object it is,
+        and that the next node its connected to is set to None by Default (relative position)"""
+        self.data = initdata
+        self.next = None
+        
+    def getData(self):
+        """function that returns the object/reference the node contrains"""
+        return self.data
+    
+    def getNext(self):
+        """returns the next node that the current node is connected to (relative position)"""
+        return self.next
+    
+    def setData(self,newdata):
+        """function that overwrites the current nodes data its holding"""
+        self.data = newdata
+    
+    def setNext(self,newnext):
+        """function that overwrites what is the next node that this node points to in the
+        relative position of the linked list."""
+        self.next = newnext
