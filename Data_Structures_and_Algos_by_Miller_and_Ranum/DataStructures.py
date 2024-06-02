@@ -140,6 +140,7 @@ class UnorderedList:
         return self.head == None
     
     def add(self,item):
+        """method that adds the next node to the linked list"""
         temp = Node(item)
         temp.setNext(self.head)
         self.head = temp
