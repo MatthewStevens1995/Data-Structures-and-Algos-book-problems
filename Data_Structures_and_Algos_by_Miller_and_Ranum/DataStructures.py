@@ -144,3 +144,12 @@ class UnorderedList:
         temp = Node(item)
         temp.setNext(self.head)
         self.head = temp
+    
+    def length(self)->int:
+        """returns the count of items in the unordered linked list"""
+        current = self.head
+        count = 0
+        while current != None:
+            count = count+1
+            current = current.getNext()
+        return count
