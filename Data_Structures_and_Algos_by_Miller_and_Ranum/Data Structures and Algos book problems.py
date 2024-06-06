@@ -501,3 +501,4 @@ def palindrom_checker(string:str)->bool:
             stillEqual = False
     return stillEqual
 
+
