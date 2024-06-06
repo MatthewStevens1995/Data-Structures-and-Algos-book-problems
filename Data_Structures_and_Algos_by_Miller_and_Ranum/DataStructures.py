@@ -146,10 +146,24 @@ class UnorderedList:
         self.head = temp
     
     def length(self)->int:
-        """returns the count of items in the unordered linked list"""
+        """traverses the linked link and returns 
+        the count of items in the unordered linked list"""
         current = self.head
         count = 0
         while current != None:
             count = count+1
             current = current.getNext()
         return count
+    
+    def search(self,itm):
+        """function traverses the unordered linked list
+        and returns True if the argument is found in the list"""
+        current = self.head
+        found = False
+        while (current != None) and (not found):
+            if current.getData() == itm:
+                return True
+            else:
+                current = current.getNext()
+            
+        return found
