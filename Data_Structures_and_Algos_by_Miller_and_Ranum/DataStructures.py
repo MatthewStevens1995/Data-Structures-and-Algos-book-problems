@@ -167,3 +167,20 @@ class UnorderedList:
                 current = current.getNext()
             
         return found
+    
+    def remove(self,itm):
+        """function that removes an item in the list
+        based on the value inputted"""
+        current = self.head
+        found = False
+        previous = None
+        while not found:
+            if current.data()==itm:
+                found=True
+            else:
+                previous = current
+                current=current.getNext()
+        if previous==None:
+            self.head=current.getNext()
+        else:
+            previous.setNext(current.getNext())
