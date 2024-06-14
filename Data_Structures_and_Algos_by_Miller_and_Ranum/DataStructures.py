@@ -175,7 +175,7 @@ class UnorderedList:
         found = False
         previous = None
         while not found:
-            if current.data()==itm:
+            if current.getData()==itm:
                 found=True
             else:
                 previous = current
@@ -184,3 +184,14 @@ class UnorderedList:
             self.head=current.getNext()
         else:
             previous.setNext(current.getNext())
+            
+    def append(self,item):
+          """method that appends an item to the end of the list"""
+          new_node = Node(item)
+          if self.head is None:
+            self.head = new_node
+          else:
+            current = self.head
+            while current.getNext() is not None:
+                current = current.getNext()
+            current.setNext(new_node)

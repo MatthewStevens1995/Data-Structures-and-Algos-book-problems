@@ -501,4 +501,11 @@ def palindrom_checker(string:str)->bool:
             stillEqual = False
     return stillEqual
 
-
+li=[1,2,3,4,5]
+mac = UnorderedList()
+for num in li:
+    mac.add(num)
+mac.remove(1)
+mac.length()
+mac.append(1)
+mac.length()
