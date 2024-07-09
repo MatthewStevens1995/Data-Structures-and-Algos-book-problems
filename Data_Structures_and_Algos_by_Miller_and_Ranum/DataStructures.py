@@ -195,3 +195,38 @@ class UnorderedList:
             while current.getNext() is not None:
                 current = current.getNext()
             current.setNext(new_node)
+            
+    def insert(self,pos,item):
+        """method to insert node at any position in the list"""
+        new_node = Node(item)
+        index = 0
+        current = self.head
+        previous = None
+        #find the index where the insertion needs to be
+        while index< pos:
+            index = index+1
+            previous = current
+            current = current.getNext()
+        #once index==position, execute insertion logic
+        previous.setNext(new_node)
+        new_node.setNext(current)
+    
+    def index(self,item):
+        """function that returns the index an item is at in an unordered list"""
+        current = self.head
+        index = 0
+        while current.getData() != item:
+            index = index+1
+            current= current.getNext()
+        return index
+    
+    def pop(self,item):
+        """removes the last node item from the list, returns the removed nodes data"""
+        current = self.head
+        previous = None
+        while current.getNext() is not None:
+            previous = current
+            current=current.getNext()
+        previous.setNext(None)
+        return current.getData()
+        
