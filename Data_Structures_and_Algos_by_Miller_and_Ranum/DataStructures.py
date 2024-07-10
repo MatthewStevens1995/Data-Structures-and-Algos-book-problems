@@ -170,7 +170,7 @@ class UnorderedList:
     
     def remove(self,itm):
         """function that removes an item in the list
-        based on the value inputted"""
+        based on the value inputted,assume its in the list"""
         current = self.head
         found = False
         previous = None
@@ -220,7 +220,7 @@ class UnorderedList:
             current= current.getNext()
         return index
     
-    def pop(self,item):
+    def pop(self):
         """removes the last node item from the list, returns the removed nodes data"""
         current = self.head
         previous = None
@@ -230,3 +230,52 @@ class UnorderedList:
         previous.setNext(None)
         return current.getData()
         
+class OrderedList:
+    def __init__(self) -> None:
+        """init method which implements class attributes"""
+        self.head = None
+        
+    def IsEmpty(self)->bool:
+        """Returns true if the list is empty, otherwise false"""
+        return self.head == None
+    
+    def Length(self)->int:
+        """Returns the count of items in the list"""
+        current = self.head
+        count = 0
+        while self.head is not None:
+            count = count +1
+            current = current.getNext()
+        return count
+    
+    def Remove(self,item:any)->None:
+        """Removes the item argument, returns None, assume its in the list"""
+        current = self.head
+        found = False
+        previous = None
+        while not found:
+            if current.getData()==item:
+                found=True
+            else:
+                previous = current
+                current=current.getNext()
+        if previous==None:
+            self.head=current.getNext()
+        else:
+            previous.setNext(current.getNext())
+            
+    def search(self,item:int)->bool:
+        """searches for the inputted value, returns true if its in the list,
+        false if its not in the list"""
+        current = self.head
+        found = False
+        stop = False
+        while current != None and not found and not stop:
+            if current.getData()== item:
+                found = True
+            else:
+                if current.getData()>item:
+                    stop = True
+                else:
+                    current = current.getNext()
+        return found
