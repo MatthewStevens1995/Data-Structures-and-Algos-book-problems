@@ -279,3 +279,72 @@ class OrderedList:
                 else:
                     current = current.getNext()
         return found
+    
+    def add(self,item):
+        current = self.head
+        previous = None
+        stop = False
+        while current != None and not stop:
+            if current.getData() > item:
+                stop = True
+            else:
+                previous = current
+                current = current.getNext()
+        
+        temp = Node(item)
+        if previous == None:
+            temp.setNext(self.head)
+            self.head = temp
+        else:
+            temp.setNext(current)
+            previous.setNext(temp)
+            
+    def index(self,item:int)->int:
+        """Returns the position of an item in the list. 
+        requires an item as argument and returns the index.
+        Assume the item is in the list"""
+        current = self.head
+        index = 0
+        while current.getData() != item:
+            index = index+1
+            current= current.getNext()
+        return index
+    
+    def pop(self)->Node:
+        """returns the last item in the linked list. assume the list
+        has at least one item"""
+        current = self.head
+        previous = None
+        while current.getNext()!= None:
+            previous = current
+            current = current.getNext()
+        previous.setNext(None)
+        return current     
+    
+    def pop(self,pos:int)->Node:
+        """removes and returns the item at position pos.needs to be 
+        a position and returns the item.
+        Assume the item is in the list"""
+        current = self.head
+        previous = None
+        index = 0
+        stop = False
+        while not stop:
+            if index != pos:
+                previous = current
+                current = current.getNext()
+            else:
+                stop = True
+        if previous == None:
+                self.head = previous
+        else:
+            previous.setNext(current.getNext())
+        return current
+                    
+            
+            
+            
+        
+           
+            
+        
