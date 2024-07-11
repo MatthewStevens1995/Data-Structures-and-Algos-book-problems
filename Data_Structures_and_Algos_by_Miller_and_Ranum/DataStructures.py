@@ -128,7 +128,7 @@ class Node:
         
 
 class UnorderedList:
-    """class to represent an unordered list.
+    """class to represent an unordered linked list.
     only data it has is telling the first node in the linked list"""
     
     def __init__(self):
@@ -231,6 +231,7 @@ class UnorderedList:
         return current.getData()
         
 class OrderedList:
+    """this is a ordered linked list class object implementation"""
     def __init__(self) -> None:
         """init method which implements class attributes"""
         self.head = None
